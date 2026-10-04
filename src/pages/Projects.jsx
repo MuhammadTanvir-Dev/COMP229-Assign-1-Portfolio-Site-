@@ -3,10 +3,9 @@ import React from 'react';
 /**
  * Projects Page Component
  * Displays the 3 mandatory projects in a horizontally centered row,
- * referencing asset images from the public directory.
+ * referencing absolute asset paths from the public directory.
  */
 function Projects() {
-  // Requirement 2b: Contextual array managing projects with root-relative public asset paths
   const technicalProjects = [
     { id: 1, title: "E-Commerce Application", image: "/project1.jpg", role: "Frontend Developer", outcome: "Engineered responsive interface handling real-time item operations smoothly." },
     { id: 2, title: "Task Manager Dashboard", image: "/project2.jpg", role: "Full-Stack Engineer", outcome: "Built scalable relational schedules reducing timeline update latencies." },
@@ -18,36 +17,10 @@ function Projects() {
       <h1>Highlighted Initiatives</h1>
       <p style={{ color: '#555', marginBottom: '30px' }}>A compilation of core software projects detailing my roles and successful deliverables:</p>
       
-      {/* Horizontal row layout that keeps project cards side-by-side and centered */}
-      <div style={{ 
-        display: 'flex', 
-        flexDirection: 'row', 
-        flexWrap: 'nowrap', 
-        justifyContent: 'center', 
-        gap: '40px', 
-        marginTop: '20px',
-        overflowX: 'auto' 
-      }}>
+      <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap', justifyContent: 'center', gap: '40px', marginTop: '20px', overflowX: 'auto' }}>
         {technicalProjects.map(project => (
-          <div 
-            key={project.id} 
-            style={{ 
-              border: '1px solid #ddd', 
-              padding: '25px', 
-              borderRadius: '12px', 
-              width: '320px', 
-              flexShrink: 0, 
-              background: '#f9f9f9', 
-              textAlign: 'left', 
-              boxShadow: '0 4px 10px rgba(0,0,0,0.04)' 
-            }}
-          >
-            {/* Requirement 1f: Displaying real project image directly from public */}
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              style={{ width: '100%', height: '170px', borderRadius: '6px', objectFit: 'cover', marginBottom: '15px' }} 
-            />
+          <div key={project.id} style={{ border: '1px solid #ddd', padding: '25px', borderRadius: '12px', width: '320px', flexShrink: 0, background: '#f9f9f9', textAlign: 'left', boxShadow: '0 4px 10px rgba(0,0,0,0.04)' }}>
+            <img src={project.image} alt={project.title} style={{ width: '100%', height: '170px', borderRadius: '6px', objectFit: 'cover', marginBottom: '15px' }} />
             <h3>{project.title}</h3>
             <p><strong>Role:</strong> {project.role}</p>
             <p style={{ marginTop: '5px', color: '#555' }}><strong>Outcome:</strong> {project.outcome}</p>
