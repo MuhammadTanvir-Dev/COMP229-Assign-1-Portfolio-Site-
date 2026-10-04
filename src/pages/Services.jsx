@@ -2,7 +2,8 @@ import React from 'react';
 
 /**
  * Services Page Component
- * Renders technical capabilities leveraging absolute asset media from the public directory.
+ * Renders technical capabilities leveraging upscaled asset media from the public directory
+ * to match the Projects page card proportions identically.
  */
 function Services() {
   // Requirement 2b: Clearly structured collection utilizing public folder path roots
@@ -34,7 +35,7 @@ function Services() {
               border: '1px solid #ddd', 
               padding: '25px', 
               borderRadius: '12px', 
-              width: '320px', 
+              width: '320px', // Matches the Projects card width exactly
               flexShrink: 0,
               background: '#f9f9f9',
               textAlign: 'left', 
@@ -44,12 +45,17 @@ function Services() {
               justifyContent: 'space-between' 
             }}
           >
-            {/* Visual asset icon container block */}
+            {/* Visual asset icon container block - upscaled to look exactly like project cards */}
             <div style={{ textAlign: 'center', marginBottom: '15px' }}>
               <img 
                 src={service.image} 
                 alt={service.title} 
-                style={{ width: '140px', height: '140px', objectFit: 'contain', borderRadius: '4px' }} 
+                style={{ 
+                  width: '100%', // Fills the card width out fully to match project images
+                  height: '170px', // Set to the exact same height as your project images
+                  objectFit: 'cover', // Ensures the image fills the boundaries cleanly without looking stretched
+                  borderRadius: '6px' 
+                }} 
               />
             </div>
             
