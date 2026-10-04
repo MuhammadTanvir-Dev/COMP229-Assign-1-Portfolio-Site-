@@ -4,11 +4,18 @@ import { Link } from 'react-router-dom';
 /**
  * Home Page Component
  * Renders the introductory screen, core professional mission criteria, 
- * and handles traffic redirection buttons.
+ * and handles traffic redirection buttons with responsive padding boundaries.
  */
 function Home() {
   return (
-    <div style={{ padding: '60px', textAlign: 'center', fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto' }}>
+    <div style={{ 
+      padding: '60px 20px', // Fluid padding wrapper to protect edges on phones
+      textAlign: 'center', 
+      fontFamily: 'Arial, sans-serif', 
+      maxWidth: '800px', 
+      margin: '0 auto',
+      boxSizing: 'border-box'
+    }}>
       {/* Requirement 1c: Welcome greeting message banner headline */}
       <h1>Welcome to My Professional Portfolio</h1>
       
@@ -29,7 +36,8 @@ function Home() {
           fontWeight: 'bold',
           cursor: 'pointer', 
           marginTop: '20px',
-          boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+          boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+          maxWidth: '100%' // Prevents button clipping on extra compact viewports
         }}>
           Learn More About Me
         </button>

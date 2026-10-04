@@ -3,11 +3,18 @@ import React from 'react';
 /**
  * About Me Page Component
  * Displays the user's legal name, a professional headshot, a bio paragraph,
- * and handles the downloadable resume link.
+ * and handles the downloadable resume link with fluid mobile safety margins.
  */
 function About() {
   return (
-    <div style={{ padding: '40px', maxWidth: '800px', margin: '0 auto', fontFamily: 'Arial, sans-serif', textAlign: 'center' }}>
+    <div style={{ 
+      padding: '40px 20px', // Safe responsive padding constraints
+      maxWidth: '800px', 
+      margin: '0 auto', 
+      fontFamily: 'Arial, sans-serif', 
+      textAlign: 'center',
+      boxSizing: 'border-box'
+    }}>
       <h1>About Me</h1>
       
       {/* Requirement 1d: Your legal name */}
@@ -18,8 +25,10 @@ function About() {
         src="/profile.jpg" 
         alt="Muhammad Professional Headshot" 
         style={{ 
-          width: '180px', 
-          height: '180px', 
+          width: '100%',
+          maxWidth: '180px', // Scales down smoothly on narrow screens while keeping desktop limits
+          height: 'auto',
+          aspectRatio: '1/1',
           borderRadius: '50%', 
           margin: '20px 0', 
           objectFit: 'cover',
@@ -46,7 +55,9 @@ function About() {
             textDecoration: 'none', 
             borderRadius: '5px', 
             fontWeight: 'bold', 
-            display: 'inline-block'
+            display: 'inline-block',
+            maxWidth: '100%',
+            boxSizing: 'border-box'
           }}
         >
           📄 Download My Resume (PDF)

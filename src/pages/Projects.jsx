@@ -2,11 +2,10 @@ import React from 'react';
 
 /**
  * Projects Page Component
- * Displays the 3 mandatory projects in a horizontally centered row,
- * referencing absolute asset paths from the public directory.
+ * Displays the 3 mandatory highlighted engineering initiatives dynamically,
+ * shifting from a side-by-side layout on desktop to a neat vertical column stack on mobile screen widths.
  */
 function Projects() {
-  // Requirement 2b: Contextual array managing projects with root-relative public asset paths
   const technicalProjects = [
     { id: 1, title: "E-Commerce Application", image: "/project1.jpg", role: "Frontend Developer", outcome: "Engineered responsive interface handling real-time item operations smoothly." },
     { id: 2, title: "Task Manager Dashboard", image: "/project2.jpg", role: "Full-Stack Engineer", outcome: "Built scalable relational schedules reducing timeline update latencies." },
@@ -14,19 +13,18 @@ function Projects() {
   ];
 
   return (
-    <div style={{ padding: '60px', fontFamily: 'Arial, sans-serif', maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
+    <div style={{ padding: '40px 20px', fontFamily: 'Arial, sans-serif', maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
       <h1>Highlighted Initiatives</h1>
       <p style={{ color: '#555', marginBottom: '30px' }}>A compilation of core software projects detailing my roles and successful deliverables:</p>
       
-      {/* Horizontal row layout that keeps project cards side-by-side and centered */}
+      {/* Adjusted from 'nowrap' to 'wrap' to ensure perfect responsiveness on smaller screen parameters */}
       <div style={{ 
         display: 'flex', 
         flexDirection: 'row', 
-        flexWrap: 'nowrap', 
+        flexWrap: 'wrap', // Allows cards to fold beneath each other automatically on phones
         justifyContent: 'center', 
-        gap: '40px', 
-        marginTop: '20px',
-        overflowX: 'auto' 
+        gap: '30px', 
+        marginTop: '20px'
       }}>
         {technicalProjects.map(project => (
           <div 
@@ -35,14 +33,14 @@ function Projects() {
               border: '1px solid #ddd', 
               padding: '25px', 
               borderRadius: '12px', 
-              width: '320px', 
-              flexShrink: 0, 
+              width: '100%',
+              maxWidth: '320px', // Restricts expansion boundaries cleanly
+              boxSizing: 'border-box',
               background: '#f9f9f9', 
               textAlign: 'left', 
               boxShadow: '0 4px 10px rgba(0,0,0,0.04)' 
             }}
           >
-            {/* Requirement 1f: Displaying real project image directly from public */}
             <img 
               src={project.image} 
               alt={project.title} 
