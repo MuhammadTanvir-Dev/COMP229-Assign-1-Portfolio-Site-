@@ -1,0 +1,72 @@
+import React from 'react';
+import icon1 from '../assets/service1.jpg';
+import icon2 from '../assets/service2.jpg';
+import icon3 from '../assets/service3.jpg';
+
+/**
+ * Services Page Component
+ * Leverages structured arrays to dynamically loop and cleanly map out 
+ * provided solution packages inside uniform display card frames.
+ */
+function Services() {
+  // Requirement 2b: Clearly structured collection outlining primary technology solutions provided
+  const technicalServicesList = [
+    { id: 1, title: "Front-Facing AI Software Development", image: icon1, description: "Building fast, responsive, and interactive frontend applications." },
+    { id: 2, title: "Custom Model Hosting & API Infrastructure", image: icon2, description: "Creating cross-platform mobile experiences for iOS and Android." },
+    { id: 3, title: "MLOps Automation & Observability Systems", image: icon3, description: "Writing clean, optimized scripts and object-oriented backend logic." },
+  ];
+
+  return (
+    <div style={{ padding: '60px', fontFamily: 'Arial, sans-serif', maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
+      <h1>Services I Offer</h1>
+      <p style={{ color: '#555', marginBottom: '30px' }}>Here is a comprehensive breakdown of the core digital solutions I specialize in providing:</p>
+      
+      {/* Requirement 1h: Centered row layout forcing card objects inline using dimensions identical to the Projects view */}
+      <div style={{ 
+        display: 'flex', 
+        flexDirection: 'row', 
+        flexWrap: 'nowrap', 
+        justifyContent: 'center', 
+        gap: '40px', 
+        marginTop: '20px',
+        overflowX: 'auto'
+      }}>
+        {technicalServicesList.map((service) => (
+          <div 
+            key={service.id} 
+            style={{ 
+              border: '1px solid #ddd', 
+              padding: '25px', 
+              borderRadius: '12px', 
+              width: '320px', 
+              flexShrink: 0,
+              background: '#f9f9f9',
+              textAlign: 'left', 
+              boxShadow: '0 4px 10px rgba(0,0,0,0.04)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between' 
+            }}
+          >
+            {/* Visual asset icon container block */}
+            <div style={{ textAlign: 'center', marginBottom: '15px' }}>
+              <img 
+                src={service.image} 
+                alt={service.title} 
+                style={{ width: '140px', height: '140px', objectFit: 'contain', borderRadius: '4px' }} 
+              />
+            </div>
+            
+            {/* Solution Header and Textual Descriptions */}
+            <div>
+              <h3>{service.title}</h3>
+              <p style={{ marginTop: '5px', color: '#555' }}>{service.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Services;
