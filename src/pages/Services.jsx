@@ -1,19 +1,15 @@
 import React from 'react';
-import icon1 from '../assets/service1.jpg';
-import icon2 from '../assets/service2.jpg';
-import icon3 from '../assets/service3.jpg';
 
 /**
  * Services Page Component
- * Leverages structured arrays to dynamically loop and cleanly map out 
- * provided solution packages inside uniform display card frames.
+ * Renders technical capabilities leveraging asset media stored in the public directory.
  */
 function Services() {
-  // Requirement 2b: Clearly structured collection outlining primary technology solutions provided
+  // Requirement 2b: Clearly structured collection utilizing public folder path roots
   const technicalServicesList = [
-    { id: 1, title: "Front-Facing AI Software Development", image: icon1, description: "Building fast, responsive, and interactive frontend applications." },
-    { id: 2, title: "Custom Model Hosting & API Infrastructure", image: icon2, description: "Creating cross-platform mobile experiences for iOS and Android." },
-    { id: 3, title: "MLOps Automation & Observability Systems", image: icon3, description: "Writing clean, optimized scripts and object-oriented backend logic." },
+    { id: 1, title: "Front-Facing AI Software Development", image: "/service1.jpg", description: "Building fast, responsive, and interactive frontend applications." },
+    { id: 2, title: "Custom Model Hosting & API Infrastructure", image: "/service2.jpg", description: "Creating cross-platform mobile experiences for iOS and Android." },
+    { id: 3, title: "MLOps Automation & Observability Systems", image: "/service3.jpg", description: "Writing clean, optimized scripts and object-oriented backend logic." },
   ];
 
   return (
@@ -57,7 +53,6 @@ function Services() {
               />
             </div>
             
-            {/* Solution Header and Textual Descriptions */}
             <div>
               <h3>{service.title}</h3>
               <p style={{ marginTop: '5px', color: '#555' }}>{service.description}</p>

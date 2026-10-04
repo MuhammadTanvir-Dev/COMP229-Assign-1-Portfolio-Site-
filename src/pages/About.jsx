@@ -1,6 +1,4 @@
 import React from 'react';
-// Requirement 1d: Import your real profile image from the assets folder
-import profileImg from '../assets/profile.jpg';
 
 /**
  * About Me Page Component
@@ -9,15 +7,15 @@ import profileImg from '../assets/profile.jpg';
  */
 function About() {
   return (
-    <div style={{ padding: '40px', maxWidth: '800px', margin: '0 auto', fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ padding: '40px', maxWidth: '800px', margin: '0 auto', fontFamily: 'Arial, sans-serif', textAlign: 'center' }}>
       <h1>About Me</h1>
       
       {/* Requirement 1d: Your legal name */}
       <h2>Muhammad</h2>
       
-      {/* Requirement 1d: Displaying your real professional profile image */}
+      {/* Requirement 1d: Displaying your real professional profile image from the public folder */}
       <img 
-        src={profileImg} 
+        src="/profile.jpg" 
         alt="Muhammad Professional Headshot" 
         style={{ 
           width: '180px', 
@@ -29,8 +27,8 @@ function About() {
         }} 
       />
       
-      {/* Requirement 1d: Clean, professional bio paragraph */}
-      <p style={{ lineHeight: '1.6', color: '#333', fontSize: '1.1rem', marginTop: '10px' }}>
+      {/* Requirement 1d: Clean, professional bio paragraph aligned neatly */}
+      <p style={{ lineHeight: '1.6', color: '#333', fontSize: '1.1rem', marginTop: '10px', textAlign: 'left' }}>
         I am a dedicated software and application development student. I focus on leveraging modern 
         JavaScript ecosystems like React to engineer responsive, intuitive, and highly functional web 
         applications that align with professional standards.
@@ -48,8 +46,7 @@ function About() {
             textDecoration: 'none', 
             borderRadius: '5px', 
             fontWeight: 'bold', 
-            display: 'inline-block',
-            transition: 'background 0.2s'
+            display: 'inline-block'
           }}
         >
           📄 Download My Resume (PDF)
